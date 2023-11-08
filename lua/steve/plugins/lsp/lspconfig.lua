@@ -70,6 +70,15 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
+		lspconfig["pyright"].setup({
+			capabilities = capabilities,
+			on_attach = function(client, bufnr)
+				on_attach(client, bufnr)
+				require("rose-pine").setup({})
+				vim.cmd.colorscheme("rose-pine")
+			end,
+		})
+
 		--configure lua server
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
