@@ -10,10 +10,10 @@ return {
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 		local builtin = require("telescope.builtin")
-		-- For [file_browser] extension
 		local fb = require("telescope").extensions.file_browser.actions
 
 		telescope.setup({
+			-- For TeleScope File Browser to use
 			extensions = {
 				file_browser = {
 					theme = "ivy",
@@ -40,7 +40,6 @@ return {
 				},
 			},
 		})
-
 		telescope.load_extension("fzf")
 		telescope.load_extension("file_browser")
 

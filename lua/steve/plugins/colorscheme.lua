@@ -1,43 +1,67 @@
-return {
-	"catppuccin/nvim",
+-- return {
+--[[ "catppuccin/nvim",
 	name = "catppuccin",
 	priority = 1000,
-	color_overrides = {
-		mocha = {
-			text = "#CE00FC",
-			subtext1 = "#CE00FC",
-			subtext0 = "#CE00FC",
-			overlay2 = "#DEBAD4",
-			overlay1 = "#9C7F92",
-			overlay0 = "#866C7D",
-			surface2 = "#CE00FC",
-			surface1 = "#5A4551",
-			surface0 = "#44313B",
-
-			base = "#352939",
-			mantle = "#211924",
-			crust = "#1a1016",
-		},
-	},
 	config = function()
 		require("catppuccin").setup({
-			flavour = "mocha", ------------------"macchiato",
-			term_colors = true,
-			styles = {
-				comments = { "italic" },
-				conditionals = { "italic" },
-			},
 			color_overrides = {
-				macchiato = { Yellow = "#3b6594" },
+				all = {},
 			},
+
+			-- this one works
+			custom_highlights = function(colors)
+				return {
+					-- --class names
+					-- Type = { fg = "#9AFFFF" },
+					-- --@ in @define
+					-- Define = { fg = "#9AFFFF" },
+					-- --define in @define
+					-- Constant = { fg = "#9AFFFF" },
+					-- --params
+					-- ["@parameter"] = { fg = "#CDABEB" },
+					-- -- class/extends/super/true
+					-- ["@keyword"] = { fg = "#90b9d4" },
+					-- -- text
+					-- ["@string"] = { fg = "#C1EBC0" },
+				}
+			end,
 		})
 		vim.cmd.colorscheme("catppuccin")
-	end,
-
-	--[[ "ramojus/mellifluous.nvim",
-	name = "mellifluous",
-	priority = 1000,
-	config = function()
-		vim.cmd.colorscheme("mellifluous")
 	end, ]]
+-- }
+
+return {
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		priority = 1000,
+		config = function()
+			require("rose-pine").setup({
+				--[[ variant = "moon",
+				dark_variant = "moon", ]]
+				disable_italics = true,
+				highlight_groups = {
+					ColorColumn = { bg = "rose" },
+					Function = { fg = "#f2dfe5" },
+					-- Type = { fg = "#f2dfe5" },
+					-- String = { fg = "#d5f1b0" },
+					String = { fg = "#f9d6aa" },
+
+					-- Blend colours against the "base" background
+					CursorLine = {},
+					StatusLine = { fg = "love", bg = "love", blend = 10 },
+
+					-- By default each group adds to the existing config.
+					-- If you only want to set what is written in this config exactly,
+					-- you can set the inherit option:
+					Search = { bg = "gold", inherit = false },
+				},
+			})
+			vim.cmd.colorscheme("rose-pine")
+			vim.lsp.handlers["textDocument/publishDiagnostics"] =
+				vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+					underline = false,
+				})
+		end,
+	},
 }

@@ -5,14 +5,22 @@ return {
 		"nvim-lua/plenary.nvim",
 		"stevearc/dressing.nvim", -- optional for vim.ui.select
 	},
+	-- config = true,
 	config = function()
-		local set = vim.keymap.set
 		local opts = { noremap = true, silent = true }
+		local set = vim.keymap.set
 		require("flutter-tools").setup({
+			closing_tags = {
+				enabled = false,
+			},
 			lsp = {
-				on_attatch = function(_, bufnr)
+				color = {},
+				on_attach = function(_, bufnr)
 					opts.buffer = bufnr
-					-- set keybinds
+
+					opts.desc = "Show Flutter Commands in Telescope"
+					set("n", "fl", "<cmd>Telescope flutter commands<CR>", opts) -- show definition, references
+
 					opts.desc = "Show LSP references"
 					set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
