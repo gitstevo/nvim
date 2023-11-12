@@ -1,5 +1,5 @@
--- return {
---[[ "catppuccin/nvim",
+--[[ return {
+	"catppuccin/nvim",
 	name = "catppuccin",
 	priority = 1000,
 	config = function()
@@ -27,8 +27,8 @@
 			end,
 		})
 		vim.cmd.colorscheme("catppuccin")
-	end, ]]
--- }
+	end,
+} ]]
 
 return {
 	{
@@ -37,8 +37,8 @@ return {
 		priority = 1000,
 		config = function()
 			require("rose-pine").setup({
-				--[[ variant = "moon",
-				dark_variant = "moon", ]]
+				variant = "moon",
+				dark_variant = "moon",
 				disable_italics = true,
 				highlight_groups = {
 					ColorColumn = { bg = "rose" },
@@ -46,6 +46,7 @@ return {
 					-- Type = { fg = "#f2dfe5" },
 					-- String = { fg = "#d5f1b0" },
 					String = { fg = "#f9d6aa" },
+					--Keyword = { fg = "#5ea7c4" },
 
 					-- Blend colours against the "base" background
 					CursorLine = {},

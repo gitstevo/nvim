@@ -31,11 +31,10 @@ return {
 					},
 					n = {
 						["<C-d>"] = actions.delete_buffer,
-						-- For [file_browser] extension
-						["<leader>f%"] = fb.create,
-						["<leader>fD"] = fb.remove,
-						["<leader>fR"] = fb.rename,
-						["<leader>fM"] = fb.rename,
+						--for file browser extensions
+						["<leader>%"] = fb.create,
+						["<leader>D"] = fb.remove,
+						["<leader>R"] = fb.rename,
 					},
 				},
 			},
@@ -50,8 +49,8 @@ return {
 		set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 		set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 		set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-		set("n", "<leader>fg", builtin.live_grep, {})
-		set("n", "<leader>fb", builtin.buffers, {})
-		set("n", "<leader>fh", builtin.help_tags, {})
+		-- set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
+		-- set("n", "<leader>fb", builtin.buffers, { desc = "Find Buffers" })
+		-- set("n", "<leader>fh", builtin.help_tags, { "Find Help" })
 	end,
 }

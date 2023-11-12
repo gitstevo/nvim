@@ -8,6 +8,7 @@ return {
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
+		"lukas-reineke/cmp-under-comparator",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -50,6 +51,11 @@ return {
 					maxwidth = 50,
 					ellipsis_char = "...",
 				}),
+			},
+			sorting = {
+				comparators = {
+					require("cmp-under-comparator").under,
+				},
 			},
 		})
 	end,
