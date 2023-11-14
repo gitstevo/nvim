@@ -2,6 +2,12 @@ vim.g.mapleader = " "
 
 local set = vim.keymap.set
 
+--change enter key to save in normal mode
+set("n", "<Enter>", "<cmd>update<CR>", { desc = "Save file on enter" })
+
+--rename with lsp and replace in all files
+set("n", "<leader>gR", ":lsp vim.lsp.buf.rename()<CR>", { desc = "Rename in all files" })
+
 --define prefix keys --
 set("n", "<leader>f", "<leader>f", { desc = "File + find commands" })
 set("n", "<leader>g", "<leader>g", { desc = "Go to" })
@@ -15,7 +21,7 @@ set("n", "<leader>w", "<leader>w", { desc = "Window Commands" })
 set("n", "<leader>pv", vim.cmd.Ex)
 
 --Go Back to Last File --
-set("n", "<leader>fp", ":b#<CR>", { desc = "Last Buffer" })
+set("n", "<leader>fp", "<cmd>b#<CR>", { desc = "Last Buffer" })
 
 -- Toggle relative line number
 set("n", "<leader>sl", ":set invrelativenumber<CR>", { desc = "Set relative numbers" })
@@ -39,6 +45,8 @@ set("n", "<leader>wk", "<c-w>k", { desc = "Move to top window" })
 set("n", "<leader>wj", "<c-w>j", { desc = "Move to bottom window" })
 set("n", "<leader>wq", "<c-w>q", { desc = "Quit window" })
 set("n", "<leader>wb", ":ball<CR>", { desc = "Window Ball command" })
+set("n", "<leader>wsh", ":split<CR>", { desc = "Split window horizontally" })
+set("n", "<leader>wsv", ":vsplit<CR>", { desc = "Split window vertically" })
 
 --terminal management
 set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal insert mode in terminal" })

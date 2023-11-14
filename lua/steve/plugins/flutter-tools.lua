@@ -15,11 +15,14 @@ return {
 			},
 			lsp = {
 				color = {},
+				settings = {
+					enableSnippets = true,
+				},
 				on_attach = function(_, bufnr)
 					opts.buffer = bufnr
 
 					opts.desc = "Show Flutter Commands in Telescope"
-					set("n", "fl", "<cmd>Telescope flutter commands<CR>", opts) -- show definition, references
+					set("n", "<leader>fl", "<cmd>Telescope flutter commands<CR>", opts) -- show definition, references
 
 					opts.desc = "Show LSP references"
 					set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references

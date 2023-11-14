@@ -20,6 +20,12 @@ return {
 					hijack_netrw = true,
 				},
 			},
+			pickers = {
+				find_files = {
+					hidden = true,
+				},
+			},
+
 			defaults = {
 				path_display = { "truncate " },
 				mappings = {
@@ -49,8 +55,8 @@ return {
 		set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 		set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 		set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-		-- set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
-		-- set("n", "<leader>fb", builtin.buffers, { desc = "Find Buffers" })
-		-- set("n", "<leader>fh", builtin.help_tags, { "Find Help" })
+		set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
+		set("n", "<leader>fb", ":Telescope buffers<CR><Esc>", { desc = "Find Buffers" })
+		set("n", "<leader>fh", ":Telescope help_tags<CR>", { desc = "Find Help" })
 	end,
 }
