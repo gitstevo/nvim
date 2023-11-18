@@ -5,9 +5,11 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.hidden = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+opt.scrolloff = 8
+opt.signcolumn = "yes"
 
 opt.termguicolors = true
 
-vim.opt.relativenumber = true
+opt.relativenumber = true
+
+vim.api.nvim_set_option("clipboard", "unnamedplus")

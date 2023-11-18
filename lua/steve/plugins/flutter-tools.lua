@@ -5,7 +5,6 @@ return {
 		"nvim-lua/plenary.nvim",
 		"stevearc/dressing.nvim", -- optional for vim.ui.select
 	},
-	-- config = true,
 	config = function()
 		local opts = { noremap = true, silent = true }
 		local set = vim.keymap.set

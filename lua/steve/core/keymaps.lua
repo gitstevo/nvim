@@ -14,7 +14,6 @@ set("n", "<leader>g", "<leader>g", { desc = "Go to" })
 set("n", "<leader>c", "<leader>c", { desc = "Code" })
 set("n", "<leader>p", "<leader>p", { desc = "Path" })
 set("n", "<leader>r", "<leader>r", { desc = "Rename or Restart" })
-set("n", "<leader>s", "<leader>s", { desc = "Set" })
 set("n", "<leader>w", "<leader>w", { desc = "Window Commands" })
 
 --file tree --
@@ -22,9 +21,6 @@ set("n", "<leader>pv", vim.cmd.Ex)
 
 --Go Back to Last File --
 set("n", "<leader>fp", "<cmd>b#<CR>", { desc = "Last Buffer" })
-
--- Toggle relative line number
-set("n", "<leader>sl", ":set invrelativenumber<CR>", { desc = "Set relative numbers" })
 
 -- Move visual mode selected lines up and down
 set("v", "J", ":m '>+1<CR>gv=gv")
@@ -39,14 +35,13 @@ set("n", "<leader>Y", '"+Y', { desc = "Yank to system clipboard" })
 set("n", "Q", "<nop>")
 
 --window management --
-set("n", "<leader>wl", "<c-w>l", { desc = "Move to right window" })
-set("n", "<leader>wh", "<c-w>h", { desc = "Move to left window" })
-set("n", "<leader>wk", "<c-w>k", { desc = "Move to top window" })
-set("n", "<leader>wj", "<c-w>j", { desc = "Move to bottom window" })
-set("n", "<leader>wq", "<c-w>q", { desc = "Quit window" })
-set("n", "<leader>wb", ":ball<CR>", { desc = "Window Ball command" })
-set("n", "<leader>wsh", ":split<CR>", { desc = "Split window horizontally" })
-set("n", "<leader>wsv", ":vsplit<CR>", { desc = "Split window vertically" })
+set("n", "<c-l>", "<c-w>l", { desc = "Move to right window" })
+set("n", "<c-h>", "<c-w>h", { desc = "Move to left window" })
+set("n", "<c-k>", "<c-w>k", { desc = "Move to top window" })
+set("n", "<c-j>", "<c-w>j", { desc = "Move to bottom window" })
+set("n", "<c-q>", "<c-w>q", { desc = "Quit window" })
+set("n", "<leader>wh", ":split<CR>", { desc = "Split window horizontally" })
+set("n", "<leader>wv", ":vsplit<CR>", { desc = "Split window vertically" })
 
 --terminal management
 set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal insert mode in terminal" })
