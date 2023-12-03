@@ -12,6 +12,9 @@ return {
 			closing_tags = {
 				enabled = false,
 			},
+			dev_tools = {
+				autostart = true,
+			},
 			lsp = {
 				color = {},
 				settings = {
