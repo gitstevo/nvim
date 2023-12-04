@@ -8,10 +8,12 @@ set("n", "<Enter>", "<cmd>update<CR>", { desc = "Save file on enter" })
 --rename with lsp and replace in all files
 set("n", "<leader>gR", ":lsp vim.lsp.buf.rename()<CR>", { desc = "Rename in all files" })
 
+--clear highlighting after searching
+set("n", "<leader>c/", ":nohlsearch<cr>", { desc = "Clear highlighting" })
+
 --define prefix keys --
 set("n", "<leader>f", "<leader>f", { desc = "File + find commands" })
 set("n", "<leader>g", "<leader>g", { desc = "Go to" })
-set("n", "<leader>c", "<leader>c", { desc = "Code" })
 set("n", "<leader>p", "<leader>p", { desc = "Path" })
 set("n", "<leader>r", "<leader>r", { desc = "Rename or Restart" })
 set("n", "<leader>w", "<leader>w", { desc = "Window Commands" })
