@@ -18,6 +18,9 @@ set("n", "<leader>p", "<leader>p", { desc = "Path" })
 set("n", "<leader>r", "<leader>r", { desc = "Rename or Restart" })
 set("n", "<leader>w", "<leader>w", { desc = "Window Commands" })
 
+--open git command
+set("n", "<leader>git", ":Git ", { desc = "open :Git as a command to type" })
+
 --file tree --
 set("n", "<leader>pv", vim.cmd.Ex)
 

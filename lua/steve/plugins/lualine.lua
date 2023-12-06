@@ -8,7 +8,7 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				theme = "catppuccin",
+				theme = "kanagawa",
 			},
 			sections = {
 				lualine_b = { "branch", "diff" },
