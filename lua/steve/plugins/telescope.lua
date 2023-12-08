@@ -10,7 +10,6 @@ return {
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 		local builtin = require("telescope.builtin")
-		local fb = require("telescope").extensions.file_browser.actions
 
 		telescope.setup({
 			-- For TeleScope File Browser to use

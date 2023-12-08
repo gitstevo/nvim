@@ -1,6 +1,7 @@
 return {
 	"akinsho/flutter-tools.nvim",
 	lazy = false,
+	ft = "dart",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"stevearc/dressing.nvim", -- optional for vim.ui.select
@@ -15,12 +16,24 @@ return {
 			dev_tools = {
 				autostart = true,
 			},
+			root_patterns = { ".git", "pubspec.yaml" },
 			lsp = {
-				color = {},
+				color = {
+					enabled = true,
+				},
 				settings = {
 					enableSnippets = true,
+					renameFilesWithClasses = "always",
+					analysisExcludedFolders = {
+						".dart_tool",
+					},
+					completeFunctionCalls = true,
+					experimentalRefactors = true,
 				},
-				on_attach = function(_, bufnr)
+
+				on_attach = function(client, bufnr)
+					client.server_capabilities.semanticTokensProvider = nil
+
 					opts.buffer = bufnr
 
 					opts.desc = "Show Flutter Commands in Telescope"
