@@ -55,3 +55,7 @@ set("n", "<leader>wv", ":vsplit<CR>", { desc = "Split window vertically" })
 
 --terminal management
 set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal insert mode in terminal" })
+
+--stupid
+set("n", "<leader>qz", ":CellularAutomaton make_it_rain<CR>", { desc = "Make it rain" })
+set("n", "<leader>qa", ":CellularAutomaton scramble<CR>", { desc = "Scramble" })
