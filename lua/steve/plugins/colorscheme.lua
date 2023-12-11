@@ -1,4 +1,5 @@
 return {
+<<<<<<< Updated upstream
 	-- "catppuccin/nvim",
 	-- name = "catppuccin",
 	-- priority = 1000,
@@ -11,6 +12,22 @@ return {
 	-- 	})
 	-- 	vim.cmd.colorscheme("catppuccin")
 	-- end,
+=======
+	--
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
+	config = function()
+		require("catppuccin").setup({
+			-- flavour = "Macchiato",
+			-- flavour = "Mocha",
+			flavour = "Frappe",
+			-- flavour = "Latte",
+		})
+		vim.cmd.colorscheme("catppuccin")
+	end,
+	--
+>>>>>>> Stashed changes
 	-- "rebelot/kanagawa.nvim",
 	-- name = "kanagawa",
 	-- priority = 1000,
