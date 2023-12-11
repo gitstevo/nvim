@@ -24,6 +24,11 @@ set("n", "<leader>git", ":Git ", { desc = "open :Git as a command to type" })
 --file tree --
 set("n", "<leader>pv", vim.cmd.Ex)
 
+--Buffers
+--Go to next buffer --
+set("n", "<leader>bn", ":bn<CR>", { desc = "Go to next buffer in list" })
+--Go to previous buffer --
+set("n", "<leader>bp", ":bn<CR>", { desc = "Go to previous buffer in list" })
 --Go Back to Last File --
 set("n", "<leader>fp", "<cmd>b#<CR>", { desc = "Last Buffer" })
 

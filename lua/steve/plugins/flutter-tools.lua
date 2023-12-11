@@ -26,6 +26,7 @@ return {
 					renameFilesWithClasses = "always",
 					analysisExcludedFolders = {
 						".dart_tool",
+						vim.fn.expand("~") .. "/.pub-cache/",
 					},
 					completeFunctionCalls = true,
 					experimentalRefactors = true,
