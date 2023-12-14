@@ -56,6 +56,16 @@ set("n", "<leader>wv", ":vsplit<CR>", { desc = "Split window vertically" })
 --terminal management
 set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal insert mode in terminal" })
 
+--marks
+--add file mark
+set("n", "<leader>ma", "mA", { desc = "Mark buff A" })
+set("n", "<leader>ma", "mB", { desc = "Mark buff B" })
+set("n", "<leader>ma", "mC", { desc = "Mark buff C" })
+--delete file mark
+set("n", "<leader>'a", "'A", { desc = "Go to marked buff A" })
+set("n", "<leader>'b", "'B", { desc = "Go to marked buff B" })
+set("n", "<leader>'c", "'C", { desc = "Go to marked buff C" })
+
 --stupid
 set("n", "<leader>qz", ":CellularAutomaton make_it_rain<CR>", { desc = "Make it rain" })
 set("n", "<leader>qa", ":CellularAutomaton scramble<CR>", { desc = "Scramble" })

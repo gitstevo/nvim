@@ -44,7 +44,7 @@ return {
 		set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 		set(
 			"n",
-			"<leader>fhid",
+			"<leader>fhi",
 			"<cmd>Telescope find_files hidden=true<cr>",
 			{ desc = "Fuzzy find hidden files in cwd" }
 		)
@@ -53,6 +53,6 @@ return {
 		set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 		set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
 		set("n", "<leader>fb", ":Telescope buffers<CR><Esc>", { desc = "Find Buffers" })
-		set("n", "<leader>fh", ":Telescope help_tags<CR>", { desc = "Find Help" })
+		set("n", "<leader>fhl", ":Telescope help_tags<CR>", { desc = "Find Help" })
 	end,
 }
