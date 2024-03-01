@@ -19,7 +19,13 @@ return {
 					hijack_netrw = true,
 				},
 			},
-
+			pickers = {
+				live_grep = {
+					additional_args = function()
+						return { "--hidden" }
+					end,
+				},
+			},
 			defaults = {
 				path_display = { "truncate " },
 				mappings = {
@@ -54,5 +60,6 @@ return {
 		set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
 		set("n", "<leader>fb", ":Telescope buffers<CR><Esc>", { desc = "Find Buffers" })
 		set("n", "<leader>fhl", ":Telescope help_tags<CR>", { desc = "Find Help" })
+		set("n", "<leader>p", ":Telescope diagnostics<CR>", { desc = "Show diagnostics for project" })
 	end,
 }

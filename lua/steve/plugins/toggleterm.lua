@@ -6,6 +6,8 @@ return {
 			open_mapping = [[<c-t>]],
 			size = 10,
 			shade_terminals = false,
+			persist_mode = false,
+			auto_scroll = true,
 		},
 	},
 }

@@ -7,14 +7,31 @@ return {
 		"stevearc/dressing.nvim", -- optional for vim.ui.select
 	},
 	config = function()
+		require("flutter-tools").setup_project({
+			{
+				name = "Profile",
+				flutter_mode = "profile", -- possible values: `debug`, `profile` or `release`, defaults to `debug`
+			},
+			{
+				name = "Release",
+				flutter_mode = "release", -- possible values: `debug`, `profile` or `release`, defaults to `debug`
+			},
+			{
+				name = "Debug",
+			},
+		})
 		local opts = { noremap = true, silent = true }
 		local set = vim.keymap.set
 		require("flutter-tools").setup({
+			fvm = true, -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled
 			closing_tags = {
 				enabled = false,
 			},
 			dev_tools = {
 				autostart = true,
+			},
+			dev_log = {
+				open_cmd = "sp",
 			},
 			root_patterns = { ".git", "pubspec.yaml" },
 			lsp = {

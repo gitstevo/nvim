@@ -14,4 +14,5 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{ import = "steve.plugins" },
 	{ import = "steve.plugins.lsp" },
+	{ import = "steve.plugins.local_setup" },
 })

@@ -5,18 +5,17 @@ local set = vim.keymap.set
 --change enter key to save in normal mode
 set("n", "<Enter>", "<cmd>update<CR>", { desc = "Save file on enter" })
 
+--set line numbers/relative line numbers
+set("n", "<leader>sl", ":set relativenumber!<CR>", { desc = "switch line/relative number" })
+
 --rename with lsp and replace in all files
 set("n", "<leader>gR", ":lsp vim.lsp.buf.rename()<CR>", { desc = "Rename in all files" })
 
+--quit nvim
+set("n", "<leader>Q", ":qa!<CR>", { desc = "force quit nvim" })
+
 --clear highlighting after searching
 set("n", "<leader>c/", ":nohlsearch<cr>", { desc = "Clear highlighting" })
-
---define prefix keys --
-set("n", "<leader>f", "<leader>f", { desc = "File + find commands" })
-set("n", "<leader>g", "<leader>g", { desc = "Go to" })
-set("n", "<leader>p", "<leader>p", { desc = "Path" })
-set("n", "<leader>r", "<leader>r", { desc = "Rename or Restart" })
-set("n", "<leader>w", "<leader>w", { desc = "Window Commands" })
 
 --open git command
 set("n", "<leader>git", ":Git ", { desc = "open :Git as a command to type" })
@@ -41,9 +40,6 @@ set("n", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 set("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 set("n", "<leader>Y", '"+Y', { desc = "Yank to system clipboard" })
 
---never hit q and quit
-set("n", "Q", "<nop>")
-
 --window management --
 set("n", "<c-l>", "<c-w>l", { desc = "Move to right window" })
 set("n", "<c-h>", "<c-w>h", { desc = "Move to left window" })
@@ -52,6 +48,18 @@ set("n", "<c-j>", "<c-w>j", { desc = "Move to bottom window" })
 set("n", "<c-q>", "<c-w>q", { desc = "Quit window" })
 set("n", "<leader>wh", ":split<CR>", { desc = "Split window horizontally" })
 set("n", "<leader>wv", ":vsplit<CR>", { desc = "Split window vertically" })
+set("n", "<leader>gdv", function()
+	vim.cmd("vsp")
+	vim.cmd("Telescope lsp_definitions")
+end, { desc = "Go to definition in vsplit" })
+set("n", "<leader>gdh", function()
+	vim.cmd("sp")
+	vim.cmd("Telescope lsp_definitions")
+end, { desc = "Go to definition in split" })
+set("t", "<C-h>", "<cmd>wincmd h<CR>", { desc = "Move to left window" })
+set("t", "<C-j>", "<cmd>wincmd j<CR>", { desc = "Move to bottom window" })
+set("t", "<C-k>", "<cmd>wincmd k<CR>", { desc = "Move to top window" })
+set("t", "<C-l>", "<cmd>wincmd l<CR>", { desc = "Move to right window" })
 
 --terminal management
 set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal insert mode in terminal" })
@@ -59,8 +67,8 @@ set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal insert mode in terminal
 --marks
 --add file mark
 set("n", "<leader>ma", "mA", { desc = "Mark buff A" })
-set("n", "<leader>ma", "mB", { desc = "Mark buff B" })
-set("n", "<leader>ma", "mC", { desc = "Mark buff C" })
+set("n", "<leader>mb", "mB", { desc = "Mark buff B" })
+set("n", "<leader>mc", "mC", { desc = "Mark buff C" })
 --delete file mark
 set("n", "<leader>'a", "'A", { desc = "Go to marked buff A" })
 set("n", "<leader>'b", "'B", { desc = "Go to marked buff B" })
