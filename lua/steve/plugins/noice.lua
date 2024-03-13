@@ -26,6 +26,15 @@ return {
 					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
 				},
 			},
+
+			--messages
+			messages = {
+				view = "mini",
+				view_error = "mini",
+				view_warn = "mini",
+				view_history = "mini",
+				view_search = "mini",
+			},
 			-- you can enable a preset for easier configuration
 			presets = {
 				-- bottom_search = true, -- use a classic bottom cmdline for search

@@ -27,6 +27,7 @@ return {
 				},
 			},
 			defaults = {
+
 				path_display = { "truncate " },
 				mappings = {
 					i = {
@@ -47,10 +48,10 @@ return {
 		-- set keymaps
 		local set = vim.keymap.set -- for conciseness
 
-		set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+		set("n", "<C-f>", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 		set(
 			"n",
-			"<leader>fhi",
+			"<leader><C-f>",
 			"<cmd>Telescope find_files hidden=true<cr>",
 			{ desc = "Fuzzy find hidden files in cwd" }
 		)

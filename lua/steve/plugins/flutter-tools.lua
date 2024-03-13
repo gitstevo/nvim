@@ -23,6 +23,11 @@ return {
 		local opts = { noremap = true, silent = true }
 		local set = vim.keymap.set
 		require("flutter-tools").setup({
+			debugger = { -- integrate with nvim dap
+				enabled = true,
+				exceptionbreakpoints = {},
+				registerconfigurations = function(paths) end,
+			},
 			fvm = true, -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled
 			closing_tags = {
 				enabled = false,
@@ -54,8 +59,16 @@ return {
 
 					opts.buffer = bufnr
 
-					opts.desc = "Show Flutter Commands in Telescope"
-					set("n", "<leader>fl", "<cmd>Telescope flutter commands<CR>", opts) -- show definition, references
+					-- flutter-tools mappings
+					set("n", "<leader>Fc", "<cmd>Telescope flutter commands<CR>", opts) -- show definition, references
+					set("n", "<leader>Fr", "<cmd>FlutterRun<CR>", opts) -- show definition, references
+					set("n", "<leader>Fe", "<cmd>FlutterEmulators<CR>", opts) -- show definition, references
+					set("n", "<leader>FR", "<cmd>FlutterRestart<CR>", opts) -- show definition, references
+					set("n", "<leader>Fq", "<cmd>FlutterQuit<CR>", opts) -- show definition, references
+					set("n", "<leader>Fd", "<cmd>FlutterDevTools<CR>", opts) -- show definition, references
+					set("n", "<leader>Fn", "<cmd>FlutterDevTools<CR>", opts) -- show definition, references
+
+					-- normal lsp mappings
 
 					opts.desc = "Show LSP references"
 					set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
@@ -83,12 +96,6 @@ return {
 
 					opts.desc = "Show line diagnostics"
 					set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
-
-					opts.desc = "Go to previous diagnostic"
-					set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
-
-					opts.desc = "Go to next diagnostic"
-					set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
 
 					opts.desc = "Show documentation for what is under cursor"
 					set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor

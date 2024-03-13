@@ -26,10 +26,14 @@ set("n", "<leader>pv", vim.cmd.Ex)
 --Buffers
 --Go to next buffer --
 set("n", "<leader>bn", ":bn<CR>", { desc = "Go to next buffer in list" })
---Go to previous buffer --
-set("n", "<leader>bp", ":bn<CR>", { desc = "Go to previous buffer in list" })
 --Go Back to Last File --
 set("n", "<leader>fp", "<cmd>b#<CR>", { desc = "Last Buffer" })
+
+--Replace instance of word specified in all file in quickfix
+function _G.Replaceall(StringOne, StringTwo)
+	local comando = "cdo s/" + StringOne + "/" + StringTwo + "/g | update"
+	vim.cmd(comando)
+end
 
 -- Move visual mode selected lines up and down
 set("v", "J", ":m '>+1<CR>gv=gv")
