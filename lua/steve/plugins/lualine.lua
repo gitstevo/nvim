@@ -5,36 +5,41 @@ return {
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
+		local function hello()
+			return ""
+		end
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
 				theme = "auto",
+				icons_enabled = true,
 			},
 			sections = {
 				lualine_a = {
 					{
-						"mode",
+						hello,
 						on_click = function()
-							os.execute('open "https://github.com/auralabs"')
+							vim.fn.system('open "https://github.com/auralabs"')
 						end,
 					},
 				},
-				lualine_b = { "branch", "diff" },
+				lualine_b = {
+					{
+						"branch",
+						on_click = function()
+							local repo = string.sub(vim.trim(vim.fn.system("git remote get-url origin")), 0, -5)
+								.. "/tree/"
+							local branch = vim.trim(vim.fn.system("git branch --show-current"))
+							local path = repo .. branch
+							local command = string.format("open %s", path)
+							vim.fn.system(command)
+						end,
+					},
+				},
 				lualine_c = {
 					{
 						"filename",
-						path = 2,
-						color = {
-							bg = "#303446",
-							on_click = function()
-								local localpath = vim.fn.expand("%")
-								-- vim.cmd("echo '" .. localpath .. "'")
-								vim.cmd("finddir('.git/..', expand('%').';')")
-								-- local path = vim.cmd("finddir('.git/..', expand('%').';')")
-								-- vim.cmd.finddir(".git/..", 'vim.cmd.expand("%").";")
-								-- vim.fn.setreg("+", localpath)
-							end,
-						},
+						path = 4,
 					},
 				},
 				lualine_x = {

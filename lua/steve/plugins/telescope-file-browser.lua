@@ -2,7 +2,6 @@ return {
 	"nvim-telescope/telescope-file-browser.nvim",
 	dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	config = function()
-		vim.api.nvim_set_keymap("n", "<leader>fr", ":Telescope file_browser <CR><Esc>", { noremap = true })
 		vim.api.nvim_set_keymap(
 			"n",
 			"<C-p>",

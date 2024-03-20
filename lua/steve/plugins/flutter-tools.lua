@@ -45,9 +45,8 @@ return {
 				},
 				settings = {
 					enableSnippets = true,
-					renameFilesWithClasses = "always",
+					renameFilesWithClasses = "prompt",
 					analysisExcludedFolders = {
-						".dart_tool",
 						vim.fn.expand("~") .. "/.pub-cache/",
 					},
 					completeFunctionCalls = true,

@@ -29,11 +29,14 @@ set("n", "<leader>bn", ":bn<CR>", { desc = "Go to next buffer in list" })
 --Go Back to Last File --
 set("n", "<leader>fp", "<cmd>b#<CR>", { desc = "Last Buffer" })
 
---Replace instance of word specified in all file in quickfix
-function _G.Replaceall(StringOne, StringTwo)
-	local comando = "cdo s/" + StringOne + "/" + StringTwo + "/g | update"
-	vim.cmd(comando)
-end
+-- Replace word in file
+-- set(
+-- 	"n",
+-- 	"<leader>Ra",
+-- 	":cdo %s/// update|g<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>",
+-- 	{ desc = "Replace all instances of word in all files in quickfix" }
+-- )
+set("n", "<leader>/", ":%s@@<Left>", { desc = "Replace all instances of word in file" })
 
 -- Move visual mode selected lines up and down
 set("v", "J", ":m '>+1<CR>gv=gv")

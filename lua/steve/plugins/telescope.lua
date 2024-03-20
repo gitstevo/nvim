@@ -15,7 +15,6 @@ return {
 			-- For TeleScope File Browser to use
 			extensions = {
 				file_browser = {
-					theme = "ivy",
 					hijack_netrw = true,
 				},
 			},
@@ -33,7 +32,7 @@ return {
 					i = {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
 						["<C-j>"] = actions.move_selection_next, -- move to next result
-						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+						-- ["<C-a>"] = actions.send_selected_to_qflist + actions.open_qflist,
 						["<C-d>"] = actions.delete_buffer,
 					},
 					n = {

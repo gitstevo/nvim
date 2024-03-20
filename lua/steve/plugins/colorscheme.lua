@@ -12,21 +12,30 @@ return {
 	-- 	vim.cmd.colorscheme("catppuccin")
 	-- end,
 	-- --
+	-- {
+	-- 	"rose-pine/neovim",
+	-- 	name = "rose-pine",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("rose-pine").setup({
+	-- 			variant = "moon",
+	-- 			enable = {
+	-- 				terminal = true,
+	-- 			},
+	-- 		})
+	-- 		vim.cmd.colorscheme("rose-pine")
+	-- 		-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	-- 		-- vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+	-- 		-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	-- 	end,
+	-- },
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
+		"morhetz/gruvbox",
+		name = "gruvbox",
 		priority = 1000,
 		config = function()
-			require("rose-pine").setup({
-				variant = "moon",
-				enable = {
-					terminal = true,
-				},
-			})
-			vim.cmd.colorscheme("rose-pine")
-			vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-			vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+			-- require("gruvbox").setup({})
+			vim.cmd.colorscheme("gruvbox")
 		end,
 	},
 }
