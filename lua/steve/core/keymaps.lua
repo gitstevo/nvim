@@ -29,13 +29,6 @@ set("n", "<leader>bn", ":bn<CR>", { desc = "Go to next buffer in list" })
 --Go Back to Last File --
 set("n", "<leader>fp", "<cmd>b#<CR>", { desc = "Last Buffer" })
 
--- Replace word in file
--- set(
--- 	"n",
--- 	"<leader>Ra",
--- 	":cdo %s/// update|g<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>",
--- 	{ desc = "Replace all instances of word in all files in quickfix" }
--- )
 set("n", "<leader>/", ":%s@@<Left>", { desc = "Replace all instances of word in file" })
 
 -- Move visual mode selected lines up and down
@@ -76,10 +69,12 @@ set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal insert mode in terminal
 set("n", "<leader>ma", "mA", { desc = "Mark buff A" })
 set("n", "<leader>mb", "mB", { desc = "Mark buff B" })
 set("n", "<leader>mc", "mC", { desc = "Mark buff C" })
+set("n", "<leader>md", "mD", { desc = "Mark buff D" })
 --delete file mark
 set("n", "<leader>'a", "'A", { desc = "Go to marked buff A" })
 set("n", "<leader>'b", "'B", { desc = "Go to marked buff B" })
 set("n", "<leader>'c", "'C", { desc = "Go to marked buff C" })
+set("n", "<leader>'d", "'D", { desc = "Go to marked buff D" })
 
 --stupid
 set("n", "<leader>qz", ":CellularAutomaton make_it_rain<CR>", { desc = "Make it rain" })
