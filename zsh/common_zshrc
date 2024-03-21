@@ -23,6 +23,7 @@ function takemebackn(){
 ##---Goto Paths---
 #
 alias zset='nvim $HOME/.zshrc'
+alias zcomset='nvim ~/.config/nvim/zsh/common_zshrc'
 alias gitset='nvim $HOME/.gitconfig'
 alias dev='cd $HOME/development/; ll'
 alias nvset='cd $HOME/.config/nvim/; nvim'
