@@ -1,3 +1,15 @@
+local function lualine_a_function()
+	vim.fn.system('open "https://github.com/auralabs"')
+end
+
+local function lualine_b_function()
+	local repo = string.sub(vim.trim(vim.fn.system("git remote get-url origin")), 0, -5) .. "/tree/"
+	local branch = vim.trim(vim.fn.system("git branch --show-current"))
+	local path = repo .. branch
+	local command = string.format("open %s", path)
+	vim.fn.system(command)
+end
+
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -5,7 +17,7 @@ return {
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
-		local function hello()
+		local function lualine_a_symbol()
 			return ""
 		end
 		-- configure lualine with modified theme
@@ -17,23 +29,14 @@ return {
 			sections = {
 				lualine_a = {
 					{
-						hello,
-						on_click = function()
-							vim.fn.system('open "https://github.com/auralabs"')
-						end,
+						lualine_a_symbol,
+						on_click = lualine_a_function,
 					},
 				},
 				lualine_b = {
 					{
 						"branch",
-						on_click = function()
-							local repo = string.sub(vim.trim(vim.fn.system("git remote get-url origin")), 0, -5)
-								.. "/tree/"
-							local branch = vim.trim(vim.fn.system("git branch --show-current"))
-							local path = repo .. branch
-							local command = string.format("open %s", path)
-							vim.fn.system(command)
-						end,
+						on_click = lualine_b_function,
 					},
 				},
 				lualine_c = {
@@ -46,12 +49,13 @@ return {
 					{
 						lazy_status.updates,
 						cond = lazy_status.has_updates,
-						color = { fg = "#ff9e64", bg = "#303446" },
+						color = { fg = "none", bg = "none" },
 					},
 				},
-				lualine_y = { { color = { bg = "#303446" } } },
-				lualine_z = { { color = { bg = "#303446" } } },
+				lualine_y = { { fg = "none", bg = "none" } },
+				lualine_z = { { fg = "none", bg = "none" } },
 			},
+
 			inactive_sections = {
 				lualine_b = { "branch" },
 				lualine_c = { { "filename", path = 2 } },
