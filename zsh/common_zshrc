@@ -16,6 +16,7 @@ alias killadb='killall -9 adb'
 alias fluttergen='dart run build_runner build --delete-conflicting-outputs'
 alias gem='open https://gemini.google.com/app'
 alias gpt='open https://chat.openai.com/'
+alias diag='open https://app.eraser.io/workspace/7JZ9Fz6vPJ7CeWmx7jHu'
 function takemebackn(){
 	git reset --soft HEAD~$1
 }
